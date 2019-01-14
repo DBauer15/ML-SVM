@@ -2,12 +2,9 @@ close all
 clear
 clc
 
-%% TODO %%
-% w0 is substracted in formula -> correct!?
-
 %% Create Data
 [X_train, t_train] = createData(500);
-
+[X_test, t_test] = createData(100);
 
 %% Train SVM
 [alpha, w0] = trainSVM(X_train, t_train);
