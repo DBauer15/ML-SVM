@@ -10,6 +10,13 @@ clc
 [alpha, w0] = trainSVM(X_train, t_train);
 w = X_train' * (alpha.*t_train);
 
+%% Evaluate SVM
+y = discriminant(alpha, w0, X_train, t_train, X_test);
+ncorrect = sum(sign(y) == t_test);
+ntotal = size(t_test,1);
+eval = ncorrect/ntotal*100;
+fprintf('Correctly classified: %d/%d (%d %%)\n', ncorrect, ntotal, eval);
+
 %% Plot Data 2D
 plotData2D(X_train, t_train);
 hold on
