@@ -2,9 +2,12 @@ close all
 clear
 clc
 
-%% Create Data
+%% Create Data (raw points)
 [X_train, t_train] = createData(500);
 [X_test, t_test] = createData(100);
+
+%% Create Data (MNIST features)
+[X_train, t_train, X_test, t_test] = createMNISTFeatureData(500, 100, 1, 0);
 
 %% Train SVM
 [alpha, w0] = trainSVM(X_train, t_train, @rbfkernel);

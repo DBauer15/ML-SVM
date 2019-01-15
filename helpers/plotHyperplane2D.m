@@ -16,7 +16,7 @@ x2max = x2max + padding;
 step = 0.05;
 
 % Extract support vectors
-support = X(alpha>0.01,:);
+support = X(alpha>0.0001,:);
 support1 = support(:,1);
 support2 = support(:,2);
 
