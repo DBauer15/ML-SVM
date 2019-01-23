@@ -12,6 +12,14 @@ t_train = t_train(t_train == class1 | t_train == class2);
 X_test = X_test(:,t_test == class1 | t_test == class2);
 t_test = t_test(t_test == class1 | t_test == class2);
 
+% Check for bounds
+if N_train == Inf
+    N_train = size(t_train);
+end
+if N_test == Inf
+    N_test = size(t_test);
+end
+
 % Filter to desired size and transpose images for format
 X_train = X_train(:,1:N_train)';
 t_train = t_train(1:N_train);

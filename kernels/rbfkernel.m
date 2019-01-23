@@ -1,10 +1,6 @@
 function [k] = rbfkernel(x1,x2)
 
-sigma = 0.2;
-
-%numerator = sum(x1.^2,2) + sum(x2.^2,2).' - (2*x1)*x2.';
-
-%k = exp(-numerator/(2*sigma^2));
+sigma = 0.4;
 
 n1sq = sum(x1.^2,2);
 

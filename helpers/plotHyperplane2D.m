@@ -1,4 +1,4 @@
-function [] = plotHyperplane2D(X,t,alpha,w0,kernel)
+function [] = plotHyperplane2D(X,t,alpha,w0,C,kernel)
 
 %% Pre-computation of bounds, extraction of data
 
@@ -16,7 +16,7 @@ x2max = x2max + padding;
 step = 0.05;
 
 % Extract support vectors
-support = X(alpha>0.0001,:);
+support = X(alpha>0.0001 & alpha<C-0.0001,:);
 support1 = support(:,1);
 support2 = support(:,2);
 
